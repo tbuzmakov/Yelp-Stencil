@@ -1,0 +1,12 @@
+{
+  "name": "@yoobic/prettier-config",
+  "version": "1.0.0",
+  "main": "index.json",
+  "prettier": "@yoobic/prettier-config",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "2.5.1"
+  }
+}

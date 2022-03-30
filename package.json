@@ -1,0 +1,14 @@
+{
+  "name": "stencil-storybook-starter",
+  "workspaces": [
+    "configs/*",
+    "design-system",
+    "playground"
+  ],
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "7.0.4"
+  }
+}

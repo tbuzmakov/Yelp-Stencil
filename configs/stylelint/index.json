@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json.schemastore.org/stylelintrc.json",
+  "extends": ["stylelint-config-recommended-scss", "stylelint-config-rational-order"],
+  "rules": {
+    "selector-type-no-unknown": [true, { "ignore": ["custom-elements"] }]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@yoobic/eslint-config",
+  "version": "1.0.0",
+  "main": "index.json",
+  "prettier": "@yoobic/prettier-config",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "5.10.2",
+    "@typescript-eslint/parser": "5.10.2",
+    "eslint-plugin-jest": "26.0.0",
+    "eslint-plugin-simple-import-sort": "7.0.0"
+  },
+  "devDependencies": {
+    "@yoobic/prettier-config": "1.0.0",
+    "prettier": "2.5.1"
+  }
+}

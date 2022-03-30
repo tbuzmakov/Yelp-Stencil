@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json.schemastore.org/eslintrc.json",
+  "extends": "eslint:recommended",
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "no-console": "error",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  },
+  "overrides": [
+    {
+      "files": "*.ts?(x)",
+      "extends": "plugin:@typescript-eslint/recommended"
+    },
+    {
+      "files": "*.spec.ts?(x)",
+      "extends": "plugin:jest/recommended"
+    }
+  ]
+}

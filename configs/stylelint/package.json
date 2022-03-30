@@ -1,0 +1,19 @@
+{
+  "name": "@yoobic/stylelint-config",
+  "version": "1.0.0",
+  "main": "index.json",
+  "prettier": "@yoobic/prettier-config",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "stylelint-config-rational-order": "0.1.2",
+    "stylelint-config-recommended-scss": "5.0.2",
+    "stylelint-order": "5.0.0",
+    "stylelint-scss": "4.1.0"
+  },
+  "devDependencies": {
+    "@yoobic/prettier-config": "1.0.0",
+    "prettier": "2.5.1"
+  }
+}
