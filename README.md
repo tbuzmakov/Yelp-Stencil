@@ -1,4 +1,4 @@
-# stencil-storybook-starter
+# Yelp-storybook-starter
 
 - [Getting started](#getting-started)
 
