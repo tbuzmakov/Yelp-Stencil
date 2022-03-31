@@ -5,8 +5,12 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ActivityCardType } from "./global/models/activity-card.model";
 import { RandomPlace } from "./global/models/randomPlace.model";
 export namespace Components {
+    interface ActivityCard {
+        "post": ActivityCardType;
+    }
     interface ButtonComponent {
         "title": string;
         "withBoarder": boolean;
@@ -26,6 +30,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLActivityCardElement extends Components.ActivityCard, HTMLStencilElement {
+    }
+    var HTMLActivityCardElement: {
+        prototype: HTMLActivityCardElement;
+        new (): HTMLActivityCardElement;
+    };
     interface HTMLButtonComponentElement extends Components.ButtonComponent, HTMLStencilElement {
     }
     var HTMLButtonComponentElement: {
@@ -63,6 +73,7 @@ declare global {
         new (): HTMLSearchComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "activity-card": HTMLActivityCardElement;
         "button-component": HTMLButtonComponentElement;
         "front-page": HTMLFrontPageElement;
         "my-component": HTMLMyComponentElement;
@@ -72,6 +83,9 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface ActivityCard {
+        "post"?: ActivityCardType;
+    }
     interface ButtonComponent {
         "title"?: string;
         "withBoarder"?: boolean;
@@ -90,6 +104,7 @@ declare namespace LocalJSX {
     interface SearchComponent {
     }
     interface IntrinsicElements {
+        "activity-card": ActivityCard;
         "button-component": ButtonComponent;
         "front-page": FrontPage;
         "my-component": MyComponent;
@@ -102,6 +117,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "activity-card": LocalJSX.ActivityCard & JSXBase.HTMLAttributes<HTMLActivityCardElement>;
             "button-component": LocalJSX.ButtonComponent & JSXBase.HTMLAttributes<HTMLButtonComponentElement>;
             "front-page": LocalJSX.FrontPage & JSXBase.HTMLAttributes<HTMLFrontPageElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
