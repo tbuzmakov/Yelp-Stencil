@@ -1,5 +1,6 @@
 :host {
   display: block;
+  max-width: 1200px;
 }
 .home-page-hero-container {
   display: flex;
@@ -7,6 +8,7 @@
   justify-content: space-between;
   align-items: center;
   min-width: 1020px;
+  max-width: 1200px;
   min-height: 500px;
   background: rgba(131, 131, 131, 0.322);
   position: relative;

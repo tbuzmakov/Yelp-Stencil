@@ -1,5 +1,6 @@
 export interface ActivityCardType {
     activity: "addedPhoto" | "wroteReview",
+    placeName: string,
     user: {
         name: string;
         avatar: string;

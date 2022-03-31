@@ -11,18 +11,15 @@ export class RecentActivity {
 
   renderCards() {
       return(
-        <div>
+        <span>
             {
               cards.map((card) => (
                 
-                  <div>
-                    <activity-card post={card}></activity-card>   
-                  </div>
-                  
+                <activity-card post={card}></activity-card>   
                 
               ))
             }
-        </div>
+        </span>
       );
   }
 
@@ -30,10 +27,19 @@ export class RecentActivity {
   
     return (
       <Host>
-        <div class="recent-activity-container">
+        <div class="recent-activity-wrapper">
           <h3>Recent Activity</h3>
-          <div>
-          {this.renderCards()}
+          <div class="recent-activity-container">
+  
+              {/* {this.renderCards()}
+              {this.renderCards()} */}
+              {cards.map((card) => (
+                
+                <activity-card post={card}></activity-card>   
+                
+              ))
+              }
+          
           </div>
           
         </div>
