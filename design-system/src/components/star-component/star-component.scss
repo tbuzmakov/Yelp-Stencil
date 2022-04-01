@@ -1,0 +1,45 @@
+@import "../../global/style/mixins.scss";
+@import "../../global/style/variables.scss";
+
+:host {
+  display: block;
+}
+
+.star-selected {
+  @include flexboxCenter(row);
+  margin: 2px;
+  width: 22px;
+  height: 22px;
+  background-color: rgb(241, 127, 114);
+  border-radius: 3px;
+  img {
+    width: 70%;
+  }
+}
+.star-not-selected{
+  @include flexboxCenter(row);
+  margin: 2px;
+  width: 22px;
+  height: 22px;
+  background-color: rgb(205, 205, 205);
+  border-radius: 3px;
+  img {
+    width: 70%;
+    // background-color: aqua;
+  }
+}
+.one{
+  background-color: rgb(247, 210, 174);
+}
+.two{
+  background-color: rgb(234, 151, 118);
+}
+.three{
+  background-color: rgb(248, 144, 132);
+}
+.four{
+  background-color: rgb(243, 110, 73);
+}
+.five{
+  background-color: rgb(247, 67, 48);
+}

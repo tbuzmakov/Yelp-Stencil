@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ActivityCardType } from "./global/models/activity-card.model";
 import { RandomPlace } from "./global/models/randomPlace.model";
+import { ratingType } from "./components/stars-component/stars-component";
 export namespace Components {
     interface ActivityCard {
         "post": ActivityCardType;
@@ -27,6 +28,13 @@ export namespace Components {
     interface RecentActivity {
     }
     interface SearchComponent {
+    }
+    interface StarComponent {
+        "isSelected": boolean;
+        "starSelected": number;
+    }
+    interface StarsComponent {
+        "rating": ratingType;
     }
 }
 declare global {
@@ -72,6 +80,18 @@ declare global {
         prototype: HTMLSearchComponentElement;
         new (): HTMLSearchComponentElement;
     };
+    interface HTMLStarComponentElement extends Components.StarComponent, HTMLStencilElement {
+    }
+    var HTMLStarComponentElement: {
+        prototype: HTMLStarComponentElement;
+        new (): HTMLStarComponentElement;
+    };
+    interface HTMLStarsComponentElement extends Components.StarsComponent, HTMLStencilElement {
+    }
+    var HTMLStarsComponentElement: {
+        prototype: HTMLStarsComponentElement;
+        new (): HTMLStarsComponentElement;
+    };
     interface HTMLElementTagNameMap {
         "activity-card": HTMLActivityCardElement;
         "button-component": HTMLButtonComponentElement;
@@ -80,6 +100,8 @@ declare global {
         "nav-bar": HTMLNavBarElement;
         "recent-activity": HTMLRecentActivityElement;
         "search-component": HTMLSearchComponentElement;
+        "star-component": HTMLStarComponentElement;
+        "stars-component": HTMLStarsComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -103,6 +125,13 @@ declare namespace LocalJSX {
     }
     interface SearchComponent {
     }
+    interface StarComponent {
+        "isSelected"?: boolean;
+        "starSelected"?: number;
+    }
+    interface StarsComponent {
+        "rating"?: ratingType;
+    }
     interface IntrinsicElements {
         "activity-card": ActivityCard;
         "button-component": ButtonComponent;
@@ -111,6 +140,8 @@ declare namespace LocalJSX {
         "nav-bar": NavBar;
         "recent-activity": RecentActivity;
         "search-component": SearchComponent;
+        "star-component": StarComponent;
+        "stars-component": StarsComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -124,6 +155,8 @@ declare module "@stencil/core" {
             "nav-bar": LocalJSX.NavBar & JSXBase.HTMLAttributes<HTMLNavBarElement>;
             "recent-activity": LocalJSX.RecentActivity & JSXBase.HTMLAttributes<HTMLRecentActivityElement>;
             "search-component": LocalJSX.SearchComponent & JSXBase.HTMLAttributes<HTMLSearchComponentElement>;
+            "star-component": LocalJSX.StarComponent & JSXBase.HTMLAttributes<HTMLStarComponentElement>;
+            "stars-component": LocalJSX.StarsComponent & JSXBase.HTMLAttributes<HTMLStarsComponentElement>;
         }
     }
 }

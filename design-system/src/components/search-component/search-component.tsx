@@ -3,7 +3,7 @@ import SearchIcon from '../../assets/icons/search.svg';
 
 @Component({
   tag: 'search-component',
-  styleUrl: 'search-component.css',
+  styleUrl: 'search-component.scss',
   shadow: true,
 })
 export class SearchComponent {

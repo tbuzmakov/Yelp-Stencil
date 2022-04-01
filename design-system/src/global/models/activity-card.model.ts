@@ -5,10 +5,11 @@ export interface ActivityCardType {
         name: string;
         avatar: string;
     },
+    placePhoto?: string;
     photos?: Array<string>,
     review?: {
         description: string,
-        raiting: "1" | "2" | "3" | "4" | "5" 
+        rating: 0 | 1 | 2 | 3 | 4 | 5, 
     },
 
 }

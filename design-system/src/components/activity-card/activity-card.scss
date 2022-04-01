@@ -1,0 +1,114 @@
+@import "../../global/style/mixins.scss";
+@import "../../global/style/variables.scss";
+
+:host {
+  display: block;
+}
+.card-container {
+
+  font-family: $fontFamily;
+
+  margin: 15px;
+  width: 280px;
+  min-height: 300px;
+  border: 1px solid rgb(234, 234, 234);
+  border-radius: 5px;
+}
+.title-container {
+  padding: 7px;
+  display: flex;
+  flex-direction: row;
+}
+.avatar {
+  @include flexboxCenter(row);
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+  }
+}
+.author {
+  margin-left: 10px;
+  font-size: 0.9em;
+  display: flex;
+  flex-direction: column;
+  a {
+    color: $secondaryColor;
+    font-weight: 800;
+    margin-bottom: 3px;
+    &:hover{
+      cursor: pointer;
+      text-decoration: underline;
+    }  
+  }
+}
+.line {
+  width: 90%;
+  height: 1px;
+  background-color: rgb(233, 233, 233);
+  margin: 5px auto;
+}
+.place-name {
+  font-family: $fontFamily;
+  color: $secondaryColor;
+  margin: 10px;
+  font-weight: 800;
+  font-size: 0.9em;
+  &:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+.photo-container {
+  display: flex;
+  flex-direction: column;
+  margin: 7px auto 0 auto;
+  width: 95%;
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 3px;
+  img {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    width: 100%;
+  }
+  .like{
+    @include flexboxCenter(row);
+    margin: 10px 0;
+    justify-content: flex-start;
+    // background-color: aqua;
+    color: rgb(162, 162, 162);
+    
+    img {
+    margin: 0 10px;
+    height: 25px;
+    width: 25px;
+    // background-color: aquamarine;
+    }
+    &:hover{
+      color: $secondaryColor;
+      cursor: pointer;
+    }
+  }
+}
+.show-all-photos {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  a {
+    font-size: 0.8em;
+    margin: 7px auto;
+    color: $secondaryColor;
+    &:hover{
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+.review {
+  font-family: $fontFamily;
+  padding: 0 10px;
+  color: rgb(88, 88, 88);
+  font-size: 0.9em;
+  line-height: 1.2em; 
+} 

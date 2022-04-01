@@ -4,7 +4,7 @@ import { RandomPlace } from '../../global/models/randomPlace.model';
 
 @Component({
   tag: 'front-page',
-  styleUrl: 'front-page.css',
+  styleUrl: 'front-page.scss',
   shadow: true,
 })
 export class FrontPage implements ComponentInterface{

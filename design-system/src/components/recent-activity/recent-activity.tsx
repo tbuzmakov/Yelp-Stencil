@@ -3,7 +3,7 @@ import { cards } from '../../global/data/activity-cards.data';
  
 @Component({
   tag: 'recent-activity',
-  styleUrl: 'recent-activity.css',
+  styleUrl: 'recent-activity.scss',
   shadow: true,
 })
 export class RecentActivity {

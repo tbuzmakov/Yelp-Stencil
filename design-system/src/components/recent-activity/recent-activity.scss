@@ -1,0 +1,20 @@
+@import "../../global/style/variables.scss";
+@import "../../global/style/mixins.scss";
+
+:host {
+  display: block;
+  margin-top: 10px; 
+}
+
+.recent-activity-wrapper {
+  @include flexboxCenter(column);
+}
+h3 {
+  color: $primaryColor;
+  font-family: $fontFamily;
+}
+.recent-activity-container {
+  @include flexboxCenter(row);
+  flex-wrap: wrap;
+  max-width: 90%;
+}
