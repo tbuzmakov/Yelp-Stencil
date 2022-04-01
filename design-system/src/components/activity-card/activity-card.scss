@@ -112,3 +112,27 @@
   font-size: 0.9em;
   line-height: 1.2em; 
 } 
+.icons-container {
+  @include flexboxCenter(row);
+  justify-content: space-between;
+  padding: 0 5px;
+
+  .icons {
+    @include flexboxCenter(row);
+    
+    img{
+      margin: 5px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+  .award {
+    
+    img{
+      margin: 5px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+}

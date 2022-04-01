@@ -1,6 +1,11 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 import { ActivityCardType } from '../../global/models/activity-card.model';
 import ThumbUp from '../../assets/icons/thumb-up.svg';
+import Award from '../../assets/icons/award.svg';
+import Like from '../../assets/icons/like.svg';
+import Nice from '../../assets/icons/nice.svg';
+import Tired from '../../assets/icons/tired.svg';
+
 
 @Component({
   tag: 'activity-card',
@@ -82,7 +87,16 @@ export class ActivityCardComponent {
           </div>
           <div class="line"></div>
 
-          <div>Icons</div>
+          <div class="icons-container">
+            <div class="icons">
+                <img src={Tired} alt="" />
+                <img src={Nice} alt="" />
+                <img src={Like} alt="" />
+            </div>
+            <div class="award">
+                <img src={Award} alt="" />
+            </div>
+          </div>
 
         </div>
       )

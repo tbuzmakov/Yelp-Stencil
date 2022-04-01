@@ -15,6 +15,9 @@
   img {
     width: 70%;
   }
+  &:hover {
+    cursor: pointer;
+  }
 }
 .star-not-selected{
   @include flexboxCenter(row);
@@ -25,7 +28,9 @@
   border-radius: 3px;
   img {
     width: 70%;
-    // background-color: aqua;
+  }
+  &:hover {
+    cursor: pointer;
   }
 }
 .one{
