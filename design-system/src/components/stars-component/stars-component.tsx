@@ -1,6 +1,6 @@
 import { Component, Host, h, Prop, State } from '@stencil/core';
 
-// export type ratingType = 0 | 1 | 2 | 3 | 4 | 5;
+//export type ratingType = 0 | 1 | 2 | 3 | 4 | 5;
 export type ratingType = number;
 
 @Component({
@@ -17,10 +17,6 @@ export class StarsComponent {
   componentWillLoad(){
     this.ratingUpdate = this.rating;
   }
-  
-  // update(){
-  //   this.ratingUpdate = Math.floor((Math.random() * 5));
-  // }
 
   setRating(ratingToChange: ratingType){
     
