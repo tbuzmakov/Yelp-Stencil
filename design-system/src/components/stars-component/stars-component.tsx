@@ -1,5 +1,6 @@
 import { Component, Host, h, Prop, State } from '@stencil/core';
 
+// export type ratingType = 0 | 1 | 2 | 3 | 4 | 5;
 export type ratingType = number;
 
 @Component({
@@ -10,29 +11,25 @@ export type ratingType = number;
 
 export class StarsComponent {
   
-  @State() ratingUpdate: number = 0;
+  @State() ratingUpdate: ratingType = 0;
   @Prop() rating: ratingType;
   
   componentWillLoad(){
     this.ratingUpdate = this.rating;
   }
   
-  update(){
-    console.log('Update Function');
-    this.ratingUpdate = Math.floor((Math.random() * 5));
-  }
+  // update(){
+  //   this.ratingUpdate = Math.floor((Math.random() * 5));
+  // }
 
   setRating(ratingToChange: ratingType){
     
     ratingToChange === this.ratingUpdate
       ? this.ratingUpdate = (this.ratingUpdate - 1)
       : this.ratingUpdate = ratingToChange;
-
-      console.log("Updated to - " + this.ratingUpdate)
   }
 
   render() {
-    console.log('Rerender with ' + this.ratingUpdate)
     return (
       <Host>
         <star-component isSelected={this.ratingUpdate > 0} starSelected={this.ratingUpdate} onClick={() => this.setRating(1)}></star-component>

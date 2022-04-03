@@ -23,7 +23,7 @@ export class SearchComponent {
           
           <div class="near">
             Near
-          <input type="text" placeholder="Vanvoucer, BC"></input>
+          <input type="text" placeholder="Vancouver, BC"></input>
           </div>
           
           

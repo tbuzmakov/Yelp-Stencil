@@ -29,7 +29,7 @@ export class FrontPage implements ComponentInterface{
               <search-component></search-component>
             
               <ul>
-                <li>Resturants</li>
+                <li>Restaurants</li>
                 <li>Nightlife</li>
                 <li>Local Services</li>
                 <li>Delivery</li>

@@ -8,7 +8,7 @@ let wroteReview = '';
 @Component({
   tag: 'recent-activity',
   styleUrl: 'recent-activity.scss',
-  shadow: true,
+  shadow: true, 
 })
 export class RecentActivity {
 
