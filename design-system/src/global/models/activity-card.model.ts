@@ -7,6 +7,7 @@ export interface ActivityCardType {
     },
     placePhoto?: string;
     photos?: Array<string>,
+    likes?: number,
     review?: {
         description: string,
         rating: 0 | 1 | 2 | 3 | 4 | 5, 

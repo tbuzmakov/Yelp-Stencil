@@ -71,6 +71,7 @@ export const cards: Array<ActivityCardType> = [
             avatar: 'https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-01/Karlie-Kloss-mc-1x1-220120-f38d9b.jpg'
         },
         photos: ['https://static01.nyt.com/images/2022/03/30/dining/25Appe-promo/merlin_202627353_46e605bd-d594-4eeb-9abe-356d9c2fce73-threeByTwoMediumAt2X.jpg', 'url', 'url'],
+        likes: 1,
     },
     {
         activity: 'wroteReview',
@@ -93,7 +94,9 @@ export const cards: Array<ActivityCardType> = [
             avatar: 'https://www.thefamouspeople.com/profiles/thumbs/jennifer-aniston-1.jpg'
         },
         photos: ['https://www.thespruceeats.com/thmb/I_M3fmEbCeNceaPrOP5_xNZ2xko=/3160x2107/filters:fill(auto,1)/vegan-tofu-tikka-masala-recipe-3378484-hero-01-d676687a7b0a4640a55be669cba73095.jpg', 'url'],
+        likes: 3,
     },
+        
     {
         activity: 'wroteReview',
         placeName: 'Fukuroku',

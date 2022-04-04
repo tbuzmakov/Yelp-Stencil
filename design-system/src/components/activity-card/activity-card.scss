@@ -76,7 +76,12 @@
     margin: 10px 0;
     justify-content: flex-start;
     color: rgb(162, 162, 162);
-    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     img {
     margin: 0 10px;
     height: 25px;

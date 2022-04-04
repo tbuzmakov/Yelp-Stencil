@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, State } from '@stencil/core';
 import { ActivityCardType } from '../../global/models/activity-card.model';
 import ThumbUp from '../../assets/icons/thumb-up.svg';
 import Award from '../../assets/icons/award.svg';
@@ -15,8 +15,16 @@ import Tired from '../../assets/icons/tired.svg';
 export class ActivityCardComponent {
   
   @Prop() post: ActivityCardType;
+  @State() likes: number;
 
+  componentWillLoad(){
+    this.post.likes ? this.likes = this.post.likes : this.likes = 0;
+  }
   
+  addLike(){
+    this.likes++;
+  }
+
   renderCard(){
     if(this.post.activity === 'addedPhoto'){
       
@@ -40,12 +48,13 @@ export class ActivityCardComponent {
           
           <div class="photo-container">
             <img src={this.post.photos[0]} alt="Photo" />
-            <div class="like">
+            
+            <div class="like" onClick={()=> this.addLike()}>
                 
                 <img src={ThumbUp} alt="Thumb Up" />
-                <dib>
-                  Like
-                </dib>
+                <div>
+                  <span>{this.likes != 0 ? this.likes : ''} Like</span>
+                </div>
             </div>
           </div>
 
@@ -104,8 +113,8 @@ export class ActivityCardComponent {
   }
   
 
-
   render() {
+  
     return (
       <Host>
           {this.renderCard()}
