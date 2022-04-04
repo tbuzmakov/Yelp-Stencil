@@ -1,6 +1,7 @@
-import { Component, Host, h, Prop, ComponentInterface, getAssetPath } from '@stencil/core';
+import { Component, Host, h, Prop, ComponentInterface, State } from '@stencil/core';
 import Logo from '../../assets/Logo.svg';
 import { RandomPlace } from '../../global/models/randomPlace.model';
+import {navBarPropsData} from './../../global/data/nav-bar-props.data'
 
 @Component({
   tag: 'front-page',
@@ -10,7 +11,11 @@ import { RandomPlace } from '../../global/models/randomPlace.model';
 export class FrontPage implements ComponentInterface{
 
   @Prop() randomPlace: RandomPlace;
+  @State() isShowingMore: boolean;
 
+  showMoreCategories(){
+    this.isShowingMore = !this.isShowingMore;
+  }
 
   render() {
     return (
@@ -20,7 +25,7 @@ export class FrontPage implements ComponentInterface{
 
             {/* Nav Bar Component */}
             <div>
-              <nav-bar></nav-bar>
+              <nav-bar props={navBarPropsData}></nav-bar>
             </div>
 
             {/* Logo  and Search Bar*/}
@@ -89,12 +94,26 @@ export class FrontPage implements ComponentInterface{
               <img src="https://s3-media0.fl.yelpcdn.com/assets/public/72x72_home_services@2x.yji-20723ad0e5ee302de563935be68c6638.png" alt="Home Services" />
                 Home Services
               </div>
-              <div class="widget">
+              <div onClick={()=> this.showMoreCategories()} class="widget">
               <img src="https://s3-media0.fl.yelpcdn.com/assets/public/72x72_more_categories@2x.yji-e7be9a50bf8cf4a2eea9f7d7e2b5f194.png" alt="More Categories" />
-                More Categories
+                {this.isShowingMore ? "Fewer" : "More"} Categories
               </div>
 
           </div>
+
+          {/* More Categories */}
+          {this.isShowingMore ? 
+          <div class="more-categories">
+            <div>
+              Coffee and Tea
+            </div>
+            <div>
+
+            </div>
+          </div>
+          : ''}
+
+
         </div>
 
         <h2>Yelp Mobile Apps</h2>

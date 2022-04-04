@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { ActivityCard } from '../activity-card';
+import { ActivityCardComponent } from '../activity-card';
 
 describe('activity-card', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [ActivityCard],
+      components: [ActivityCardComponent],
       html: `<activity-card></activity-card>`,
     });
     expect(page.root).toEqualHtml(`

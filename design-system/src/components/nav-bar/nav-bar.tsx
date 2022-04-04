@@ -1,5 +1,11 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop} from '@stencil/core';
+import { btnType } from '../button-component/button-component';
 
+
+export type navBarType = {
+  links:Array<btnType>,
+  buttons:Array<btnType>
+}
 @Component({
   tag: 'nav-bar',
   styleUrl: 'nav-bar.scss',
@@ -7,26 +13,36 @@ import { Component, Host, h } from '@stencil/core';
 })
 export class NavBar {
 
+  @Prop() props: navBarType;
+  
+  
+  linksRender() {
+    return(
+      <div class="links">
+        {this.props.links.map((link) => (
+          <button-component props={link} ></button-component>
+        ))}
+      </div>
+    )
+  }
+
+  buttonsRender() {
+    return(
+      <div class="btn">
+        {this.props.buttons.map((btn) => (
+          <button-component props={btn} ></button-component>
+        ))}
+      </div>
+    )
+  }
+
+
   render() {
     return (
       <Host>
 
-        {/* Links */}
-        <div class="links">
-          <button-component title='Write a Review' withBoarder = {false}></button-component>
-          <button-component title='Events' withBoarder = {false}></button-component>
-          <button-component title='Talk' withBoarder = {false}></button-component>
-          <button-component title='Yelp for Business' withBoarder = {false}></button-component>
-        </div>
-        
-
-        {/* Buttons */}
-        <div class="btn">
-          <button-component title='Log In' withBoarder = {false}></button-component>
-          <button-component title='Sign Up' withBoarder = {true}></button-component>
-        </div>
-        
-        
+        {this.linksRender()}
+        {this.buttonsRender()}
         
       </Host>
     );
