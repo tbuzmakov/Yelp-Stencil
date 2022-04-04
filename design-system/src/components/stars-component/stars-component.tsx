@@ -1,8 +1,7 @@
-import { Component, Host, h, Prop, State } from '@stencil/core';
+import { Component, h, Host, Prop, State } from '@stencil/core';
 
-//export type ratingType = 0 | 1 | 2 | 3 | 4 | 5;
-export type ratingType = number;
 
+export type ratingType = 0 | 1 | 2 | 3 | 4 | 5;
 @Component({
   tag: 'stars-component',
   styleUrl: 'stars-component.scss',
@@ -21,7 +20,7 @@ export class StarsComponent {
   setRating(ratingToChange: ratingType){
     
     ratingToChange === this.ratingUpdate
-      ? this.ratingUpdate = (this.ratingUpdate - 1)
+      ? this.ratingUpdate =  this.ratingUpdate - 1 as ratingType
       : this.ratingUpdate = ratingToChange;
   }
 
