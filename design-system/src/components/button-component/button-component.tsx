@@ -1,6 +1,6 @@
 import { Component, h, Host, Prop } from '@stencil/core';
 
-export type btnType = {
+export interface IButtonEntry {
   title: string,
   withBorder: boolean
 }
@@ -11,13 +11,13 @@ export type btnType = {
 })
 export class ButtonComponent {
   
-  @Prop() props: btnType;
+  @Prop() buttonEntry: IButtonEntry;
 
   render() {
     return (
       <Host>
 
-        {this.props.withBorder ? <button class="btn">{this.props.title}</button> : <button class="btn-without-border">{this.props.title}</button>}
+        {this.buttonEntry.withBorder ? <button class="btn">{this.buttonEntry.title}</button> : <button class="btn-without-border">{this.buttonEntry.title}</button>}
         
       </Host>
     );

@@ -25,7 +25,7 @@ export class FrontPage implements ComponentInterface{
 
             {/* Nav Bar Component */}
             <div>
-              <nav-bar props={navBarPropsData}></nav-bar>
+              <nav-bar navbarEntry={navBarPropsData}></nav-bar>
             </div>
 
             {/* Logo  and Search Bar*/}

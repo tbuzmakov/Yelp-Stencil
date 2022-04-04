@@ -1,10 +1,9 @@
 import { Component, Host, h, Prop} from '@stencil/core';
-import { btnType } from '../button-component/button-component';
+import { IButtonEntry } from '../button-component/button-component';
 
-
-export type navBarType = {
-  links:Array<btnType>,
-  buttons:Array<btnType>
+export interface INavbarEntry  {
+  links:Array<IButtonEntry>,
+  buttons:Array<IButtonEntry>
 }
 @Component({
   tag: 'nav-bar',
@@ -13,14 +12,14 @@ export type navBarType = {
 })
 export class NavBar {
 
-  @Prop() props: navBarType;
+  @Prop() navbarEntry: INavbarEntry;
   
   
   linksRender() {
     return(
       <div class="links">
-        {this.props.links.map((link) => (
-          <button-component props={link} ></button-component>
+        {this.navbarEntry.links.map((link) => (
+          <button-component buttonEntry={link} ></button-component>
         ))}
       </div>
     )
@@ -29,13 +28,12 @@ export class NavBar {
   buttonsRender() {
     return(
       <div class="btn">
-        {this.props.buttons.map((btn) => (
-          <button-component props={btn} ></button-component>
+        {this.navbarEntry.buttons.map((btn) => (
+          <button-component buttonEntry={btn} ></button-component>
         ))}
       </div>
     )
   }
-
 
   render() {
     return (

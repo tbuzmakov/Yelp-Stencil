@@ -6,16 +6,16 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ActivityCardType } from "./global/models/activity-card.model";
-import { btnType } from "./components/button-component/button-component";
+import { IButtonEntry } from "./components/button-component/button-component";
 import { RandomPlace } from "./global/models/randomPlace.model";
-import { navBarType } from "./components/nav-bar/nav-bar";
+import { INavbarEntry } from "./components/nav-bar/nav-bar";
 import { ratingType } from "./components/stars-component/stars-component";
 export namespace Components {
     interface ActivityCard {
         "post": ActivityCardType;
     }
     interface ButtonComponent {
-        "props": btnType;
+        "buttonEntry": IButtonEntry;
     }
     interface FrontPage {
         "randomPlace": RandomPlace;
@@ -25,7 +25,7 @@ export namespace Components {
         "last"?: string;
     }
     interface NavBar {
-        "props": navBarType;
+        "navbarEntry": INavbarEntry;
     }
     interface RecentActivity {
     }
@@ -111,7 +111,7 @@ declare namespace LocalJSX {
         "post"?: ActivityCardType;
     }
     interface ButtonComponent {
-        "props"?: btnType;
+        "buttonEntry"?: IButtonEntry;
     }
     interface FrontPage {
         "randomPlace"?: RandomPlace;
@@ -121,7 +121,7 @@ declare namespace LocalJSX {
         "last"?: string;
     }
     interface NavBar {
-        "props"?: navBarType;
+        "navbarEntry"?: INavbarEntry;
     }
     interface RecentActivity {
     }

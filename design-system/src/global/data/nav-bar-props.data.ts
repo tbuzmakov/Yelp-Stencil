@@ -1,7 +1,8 @@
-import { navBarType } from "../../components/nav-bar/nav-bar";
+import { INavbarEntry } from "../../components/nav-bar/nav-bar";
 
 
-export const navBarPropsData: navBarType = {
+
+export const navBarPropsData: INavbarEntry = {
     links: [
         {
         title: 'Write a Review',
