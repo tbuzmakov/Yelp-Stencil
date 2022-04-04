@@ -10,9 +10,7 @@
   @include flexboxCenter(column);
 }
 h2 {
-  font-size: 1.2em;
-  color: $primaryColor;
-  font-family: $fontFamily;
+  @include h2;
 }
 .recent-activity-container {
   @include flexboxCenter(row);

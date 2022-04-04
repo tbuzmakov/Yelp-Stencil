@@ -8,6 +8,7 @@ export const cards: Array<ActivityCardType> = [
             name: 'Jennifer A.',
             avatar: 'https://www.thefamouspeople.com/profiles/thumbs/jennifer-aniston-1.jpg'
         },
+        likes: 3,
         photos: ['https://www.thespruceeats.com/thmb/I_M3fmEbCeNceaPrOP5_xNZ2xko=/3160x2107/filters:fill(auto,1)/vegan-tofu-tikka-masala-recipe-3378484-hero-01-d676687a7b0a4640a55be669cba73095.jpg', 'url'],
     },
     {
@@ -26,6 +27,7 @@ export const cards: Array<ActivityCardType> = [
             name: 'Cathryn O.',
             avatar: 'https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-01/Karlie-Kloss-mc-1x1-220120-f38d9b.jpg'
         },
+        likes: 1,
         photos: ['https://static01.nyt.com/images/2022/03/30/dining/25Appe-promo/merlin_202627353_46e605bd-d594-4eeb-9abe-356d9c2fce73-threeByTwoMediumAt2X.jpg', 'url', 'url'],
     },
     {
@@ -122,6 +124,15 @@ export const cards: Array<ActivityCardType> = [
             description: 'I would give 0 stars if I could! I ordered dinner-jerk pork dinner for two and jerk chicken. Via door dash 1) food arrived quickly 2) jerk pork portion was so little.. and it was burnt and dry 3) jerk chicken was so dry it was almost impossible to eat. 4) rice n peas.. not sure what they serve.. 5) gravy was Im thankful DoorDash offered a partial refund.',
             rating: 1
         }
+    },
+    {
+        activity: 'addedPhoto',
+        placeName: 'Fukuroku Express',
+        user: {
+            name: 'Angelica W.',
+            avatar: 'https://theactorispresent.kr/drmvsn/wp-content/uploads/2021/03/lsy-1x1-img.jpg?x47117'
+        },
+        photos: ['https://media.istockphoto.com/photos/table-top-view-of-spicy-food-picture-id1316145932?b=1&k=20&m=1316145932&s=170667a&w=0&h=feyrNSTglzksHoEDSsnrG47UoY_XX4PtayUPpSMunQI=', 'url', 'url'],
     },
 ];
 

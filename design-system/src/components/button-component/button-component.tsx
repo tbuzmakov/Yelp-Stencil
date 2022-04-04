@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
   tag: 'button-component',
@@ -13,7 +13,6 @@ export class ButtonComponent {
     return (
       <Host>
 
-      
       {this.withBoarder ? <button class="btn">{this.title}</button> : <button class="btn-without-border">{this.title}</button>}
         
       </Host>

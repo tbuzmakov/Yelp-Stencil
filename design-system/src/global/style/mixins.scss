@@ -1,6 +1,14 @@
+
 @mixin flexboxCenter($direction) {
     display: flex;
     flex-direction: $direction;
     justify-content: center;
     align-items: center;
+}
+
+@mixin h2 {
+    font-size: 1.2em;
+    color: $primaryColor;
+    font-family: $fontFamily;
+    text-align: center;
 }
