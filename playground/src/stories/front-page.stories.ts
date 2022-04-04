@@ -1,26 +1,21 @@
 import { Meta, Story } from '@storybook/web-components';
 import { Components } from '@yoobic/design-system';
 import { html } from 'lit-html';
+import {FrontPageData} from "./../../../design-system/src/global/data/front-page.data"
 
 export default {
-  title: 'Fron Page',
+  title: 'Front Page',
 } as Meta;
 
-const Template: Story<Components.FrontPage> = ({ randomPlace }) => {
+const Template: Story<Components.FrontPage> = ({ frontPageEntry }) => {
   
   const frontPage = document.createElement('front-page');
-  frontPage.randomPlace = randomPlace;
+  frontPage.frontPageEntry = FrontPageData;
   
   return frontPage;
-  // return html`<front-page></front-page>`;
 };
 
 export const Default: Story<Components.FrontPage> = Template.bind({});
-Default.args = {
-    
-    randomPlace: {
-      title: "Revival",
-      photoBy: "Ashley C.",
-      imageURL: 'https://media-cdn.tripadvisor.com/media/photo-m/1280/13/8c/6d/99/dark-vader-burger.jpg',
-    }
+Default.args = { 
+
 };
