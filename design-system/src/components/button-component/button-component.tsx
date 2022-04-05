@@ -17,7 +17,7 @@ export class ButtonComponent {
     return (
       <Host>
 
-        {this.buttonEntry.withBorder ? <button class="btn">{this.buttonEntry.title}</button> : <button class="btn-without-border">{this.buttonEntry.title}</button>}
+        <button class={{'btn': true, 'btn-without-border': !this.buttonEntry.withBorder}}>{this.buttonEntry.title}</button>
         
       </Host>
     );

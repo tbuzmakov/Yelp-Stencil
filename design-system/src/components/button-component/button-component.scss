@@ -17,18 +17,28 @@
     color: rgb(85, 85, 85);
     transition: color 1s linear;
   }
-}
-
-.btn-without-border {
-  border: none;
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  color: rgb(255, 255, 255);
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  &:hover {
-    border-bottom: 2px solid white;
-    transition: color 1s linear;
+  &.btn-without-border{
+    border: none;
+    &:hover {
+      border: none;
+      background-color: Transparent;
+      border-radius: 0px;
+      border-bottom: 2px solid white;
+      color: rgb(255, 255, 255);  
+    }
   }
 }
+
+// .btn-without-border {
+//   border: none;
+//   background-color: Transparent;
+//   background-repeat:no-repeat;
+//   color: rgb(255, 255, 255);
+//   padding: 10px 20px;
+//   font-size: 16px;
+//   cursor: pointer;
+//   &:hover {
+//     border-bottom: 2px solid white;
+//     transition: color 1s linear;
+//   }
+// }
