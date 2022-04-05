@@ -18,19 +18,8 @@
   &:hover {
     cursor: pointer;
   }
-}
-.star-not-selected{
-  @include flexboxCenter(row);
-  margin: 2px;
-  width: 22px;
-  height: 22px;
-  background-color: rgb(205, 205, 205);
-  border-radius: 3px;
-  img {
-    width: 70%;
-  }
-  &:hover {
-    cursor: pointer;
+  &.star-not-selected{
+    background-color: rgb(205, 205, 205);  
   }
 }
 .one{
