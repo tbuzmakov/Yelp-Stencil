@@ -128,6 +128,7 @@ declare namespace LocalJSX {
     interface RecentActivity {
     }
     interface SearchComponent {
+        "onSearchEvent"?: (event: CustomEvent<string>) => void;
         "searchBarEntry"?: ISearchEntry;
     }
     interface StarComponent {

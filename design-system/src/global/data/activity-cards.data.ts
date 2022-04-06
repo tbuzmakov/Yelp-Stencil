@@ -22,7 +22,7 @@ export const cards: Array<ActivityCardType> = [
     },
     {
         activity: 'addedPhoto',
-        placeName: 'Fukuroku Express',
+        placeName: 'Tim Hortons',
         user: {
             name: 'Cathryn O.',
             avatar: 'https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-01/Karlie-Kloss-mc-1x1-220120-f38d9b.jpg'
@@ -32,7 +32,7 @@ export const cards: Array<ActivityCardType> = [
     },
     {
         activity: 'wroteReview',
-        placeName: 'Fukuroku Express',
+        placeName: 'Cactus',
         placePhoto: 'https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/MG_3869.jpg?fit=1500%2C1011&ssl=1',
         user: {
             name: 'Paul',
@@ -45,7 +45,7 @@ export const cards: Array<ActivityCardType> = [
     },
     {
         activity: 'addedPhoto',
-        placeName: 'Fukuroku Express',
+        placeName: 'White Spot',
         user: {
             name: 'Cathryn O.',
             avatar: 'https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-01/Karlie-Kloss-mc-1x1-220120-f38d9b.jpg'
@@ -54,7 +54,7 @@ export const cards: Array<ActivityCardType> = [
     },
     {
         activity: 'wroteReview',
-        placeName: 'Fukuroku Express',
+        placeName: 'The Keg',
         placePhoto: 'https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/MG_3869.jpg?fit=1500%2C1011&ssl=1',
         user: {
             name: 'Paul',
@@ -67,7 +67,7 @@ export const cards: Array<ActivityCardType> = [
     },
     {
         activity: 'addedPhoto',
-        placeName: 'Fukuroku Express',
+        placeName: 'Tim Hortons',
         user: {
             name: 'Cathryn O.',
             avatar: 'https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-01/Karlie-Kloss-mc-1x1-220120-f38d9b.jpg'
@@ -90,7 +90,7 @@ export const cards: Array<ActivityCardType> = [
     },
     {
         activity: 'addedPhoto',
-        placeName: 'Fukuroku Express',
+        placeName: 'Starbucks',
         user: {
             name: 'Jennifer A.',
             avatar: 'https://www.thefamouspeople.com/profiles/thumbs/jennifer-aniston-1.jpg'
@@ -101,7 +101,7 @@ export const cards: Array<ActivityCardType> = [
         
     {
         activity: 'wroteReview',
-        placeName: 'Fukuroku',
+        placeName: 'Starbucks',
         placePhoto: 'https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2019/10/MG_3869.jpg?fit=1500%2C1011&ssl=1',
         user: {
             name: 'Kevin',
@@ -127,7 +127,7 @@ export const cards: Array<ActivityCardType> = [
     },
     {
         activity: 'addedPhoto',
-        placeName: 'Fukuroku Express',
+        placeName: 'Starbucks',
         user: {
             name: 'Angelica W.',
             avatar: 'https://theactorispresent.kr/drmvsn/wp-content/uploads/2021/03/lsy-1x1-img.jpg?x47117'

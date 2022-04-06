@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
 import SearchIcon from '../../assets/icons/search.svg';
 
 export interface ISearchEntry {
@@ -19,13 +19,21 @@ export class SearchComponent {
 
   @Prop() searchBarEntry: ISearchEntry;
 
+
+  @Event({}) searchEvent: EventEmitter<string>;
+
+  handleChange(eventInput) {
+    this.searchEvent.emit(eventInput.target.value);
+  }
+
+
   searchBarRender(){ 
     return(
       <div class="search-container">
           
           <div class="find">
             {this.searchBarEntry.firstInputTitle}
-          <input type={this.searchBarEntry.firsInputType} placeholder={this.searchBarEntry.firstInputPlaceHolder}></input>
+          <input onInput={(event) => this.handleChange(event)} type={this.searchBarEntry.firsInputType} placeholder={this.searchBarEntry.firstInputPlaceHolder}></input>
           </div>
           
           <div class="near">

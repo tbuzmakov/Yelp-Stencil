@@ -1,4 +1,4 @@
-import { Component, h, Host, State } from '@stencil/core';
+import { Component, h, Host, State, Listen } from '@stencil/core';
 
 import { cards } from '../../global/data/activity-cards.data';
  
@@ -16,6 +16,7 @@ export class RecentActivity {
 
   @State() filter: filterType = 'all';
 
+  @State() search = '';
 
   setFilter(filterTo: filterType){
     this.filter = filterTo;
@@ -39,14 +40,23 @@ export class RecentActivity {
     }
   }
 
-  renderCards() {
-    let cardsToRender;
+  filterCards(){
+    let cardsFiltered = [];
 
     if(this.filter === 'all'){
-      cardsToRender = cards.map((post) => post)
+      cardsFiltered = cards.filter((post) => (
+        this.search === '' ? (post) : (post.placeName.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()))))
     } else {
-      cardsToRender = cards.filter((post) => post.activity === this.filter)
+      cardsFiltered = cards.filter((post) => (
+        this.search === '' ? (post.activity === this.filter) : (post.placeName.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()) && post.activity === this.filter)))
     }
+    return cardsFiltered;
+  }
+
+
+  renderCards() {
+    const cardsToRender = this.filterCards();
+
       return(
         <div class="recent-activity-container">
               {cardsToRender.map((card) => (
@@ -67,6 +77,12 @@ export class RecentActivity {
           <div class={wroteReview} onClick={() => this.setFilter('wroteReview')}>Review</div>
         </div>
       )
+  }
+
+
+  @Listen("searchEvent", {target: "body"})
+  searchHandler(event: CustomEvent<string>){
+    this.search = event.detail;
   }
   
 
