@@ -16,7 +16,8 @@ export class RecentActivity {
 
   @State() filter: filterType = 'all';
 
-  @State() search = '';
+  @State() searchPlaceName = '';
+  @State() searchLocation = '';
 
   setFilter(filterTo: filterType){
     this.filter = filterTo;
@@ -43,12 +44,13 @@ export class RecentActivity {
   filterCards(){
     let cardsFiltered = [];
 
+    
     if(this.filter === 'all'){
       cardsFiltered = cards.filter((post) => (
-        this.search === '' ? (post) : (post.placeName.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()))))
+        (this.searchPlaceName === '' && this.searchLocation === '') ? (post) : (post.location.toLocaleLowerCase().includes(this.searchLocation.toLocaleLowerCase()) && post.placeName.toLocaleLowerCase().includes(this.searchPlaceName.toLocaleLowerCase()))))
     } else {
       cardsFiltered = cards.filter((post) => (
-        this.search === '' ? (post.activity === this.filter) : (post.placeName.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()) && post.activity === this.filter)))
+        (this.searchPlaceName === ''  && this.searchLocation === '') ? (post.activity === this.filter) : (post.location.toLocaleLowerCase().includes(this.searchLocation.toLocaleLowerCase()) && post.placeName.toLocaleLowerCase().includes(this.searchPlaceName.toLocaleLowerCase()) && post.activity === this.filter)))
     }
     return cardsFiltered;
   }
@@ -80,9 +82,14 @@ export class RecentActivity {
   }
 
 
-  @Listen("searchEvent", {target: "body"})
-  searchHandler(event: CustomEvent<string>){
-    this.search = event.detail;
+  @Listen("searchPlaceEvent", {target: "body"})
+  searchPlaceHandler(event: CustomEvent<string>){
+    this.searchPlaceName = event.detail;
+  }
+
+  @Listen("searchLocationEvent", {target: "body"})
+  searchLocationHandler(event: CustomEvent<string>){
+    this.searchLocation = event.detail;
   }
   
 

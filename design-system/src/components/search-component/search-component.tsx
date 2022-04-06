@@ -20,10 +20,13 @@ export class SearchComponent {
   @Prop() searchBarEntry: ISearchEntry;
 
 
-  @Event({}) searchEvent: EventEmitter<string>;
-
-  handleChange(eventInput) {
-    this.searchEvent.emit(eventInput.target.value);
+  @Event({}) searchPlaceEvent: EventEmitter<string>;
+  handleChangeNear(eventInput) {
+    this.searchPlaceEvent.emit(eventInput.target.value);
+  }
+  @Event({}) searchLocationEvent: EventEmitter<string>;
+  handleChangeLocation(eventInput) {
+    this.searchLocationEvent.emit(eventInput.target.value);
   }
 
 
@@ -33,12 +36,12 @@ export class SearchComponent {
           
           <div class="find">
             {this.searchBarEntry.firstInputTitle}
-          <input onInput={(event) => this.handleChange(event)} type={this.searchBarEntry.firsInputType} placeholder={this.searchBarEntry.firstInputPlaceHolder}></input>
+          <input onInput={(event) => this.handleChangeNear(event)} type={this.searchBarEntry.firsInputType} placeholder={this.searchBarEntry.firstInputPlaceHolder}></input>
           </div>
           
           <div class="near">
           {this.searchBarEntry.secondInputTitle}
-          <input type={this.searchBarEntry.secondInputType} placeholder={this.searchBarEntry.secondInputPlaceHolder}></input>
+          <input onInput={(event) => this.handleChangeLocation(event)} type={this.searchBarEntry.secondInputType} placeholder={this.searchBarEntry.secondInputPlaceHolder}></input>
           </div>
           
           <div class="search-btn">
