@@ -1,5 +1,14 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 import SearchIcon from '../../assets/icons/search.svg';
+
+export interface ISearchEntry {
+    firstInputTitle: string,
+    firsInputType: string,
+    firstInputPlaceHolder: string,
+    secondInputTitle: string,
+    secondInputType: string,
+    secondInputPlaceHolder: string,
+  }
 
 @Component({
   tag: 'search-component',
@@ -8,31 +17,33 @@ import SearchIcon from '../../assets/icons/search.svg';
 })
 export class SearchComponent {
 
-  render() {
-    return (
-      <Host>
+  @Prop() searchBarEntry: ISearchEntry;
 
-
-        <div class="search-container">
+  searchBarRender(){ 
+    return(
+      <div class="search-container">
           
           <div class="find">
-            Find
-          <input type="text" placeholder="burgers, barbers, spas, handyman"></input>
+            {this.searchBarEntry.firstInputTitle}
+          <input type={this.searchBarEntry.firsInputType} placeholder={this.searchBarEntry.firstInputPlaceHolder}></input>
           </div>
-          
           
           <div class="near">
-            Near
-          <input type="text" placeholder="Vancouver, BC"></input>
+          {this.searchBarEntry.secondInputTitle}
+          <input type={this.searchBarEntry.secondInputType} placeholder={this.searchBarEntry.secondInputPlaceHolder}></input>
           </div>
           
-          
-
           <div class="search-btn">
             <img src={SearchIcon} alt="search" />
           </div>
         </div>
-        
+      )
+  }
+
+  render() {
+    return (
+      <Host>
+        {this.searchBarRender()}
       </Host>
     );
   }

@@ -1,6 +1,7 @@
 import { Component, ComponentInterface, h, Host, Prop, State } from '@stencil/core';
 
 import Logo from '../../assets/Logo.svg';
+import { ISearchEntry } from '../search-component/search-component';
 import {navBarPropsData} from './../../global/data/nav-bar-props.data'
 
 export interface IFrontPageEntry {
@@ -28,6 +29,7 @@ export interface IFrontPageEntry {
     icon: string,
   }>
 }
+
 @Component({
   tag: 'front-page',
   styleUrl: 'front-page.scss',
@@ -38,13 +40,22 @@ export class FrontPage implements ComponentInterface {
   @Prop() frontPageEntry: IFrontPageEntry;
   @State() isShowingMore: boolean;
 
+  private searchBarEntry: ISearchEntry = {
+    firstInputTitle: 'Find',
+    firsInputType: 'text',
+    firstInputPlaceHolder: 'burgers, barbers, spas, handyman',
+    secondInputTitle: 'Near',
+    secondInputType: 'text',
+    secondInputPlaceHolder: 'Vancouver, BC'
+  }
 
   logoAndSearchBarRender(){
+    
     return(
         <div class="home-page-inner-container">
             
             <img src={Logo} alt="" />
-            <search-component></search-component>
+            <search-component searchBarEntry={this.searchBarEntry}></search-component>
 
             {this.linksRender()}
             

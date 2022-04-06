@@ -9,6 +9,7 @@ import { ActivityCardType } from "./global/models/activity-card.model";
 import { IButtonEntry } from "./components/button-component/button-component";
 import { IFrontPageEntry } from "./components/front-page/front-page";
 import { INavbarEntry } from "./components/nav-bar/nav-bar";
+import { ISearchEntry } from "./components/search-component/search-component";
 import { ratingType } from "./components/stars-component/stars-component";
 export namespace Components {
     interface ActivityCard {
@@ -30,6 +31,7 @@ export namespace Components {
     interface RecentActivity {
     }
     interface SearchComponent {
+        "searchBarEntry": ISearchEntry;
     }
     interface StarComponent {
         "isSelected": boolean;
@@ -126,6 +128,7 @@ declare namespace LocalJSX {
     interface RecentActivity {
     }
     interface SearchComponent {
+        "searchBarEntry"?: ISearchEntry;
     }
     interface StarComponent {
         "isSelected"?: boolean;
