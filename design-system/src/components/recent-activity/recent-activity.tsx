@@ -1,12 +1,17 @@
-import { Component, h, Host, State, Listen } from '@stencil/core';
-
-import { cards } from '../../global/data/activity-cards.data';
+import { Component, h, Host, State, Prop } from '@stencil/core';
+import { ActivityCardType } from '../../global/models/activity-card.model';
  
 
 type filterType = 'all' | 'addedPhoto' | 'wroteReview';
 let all = 'selected';
 let photoAdded = '';
 let wroteReview = '';
+
+export interface IRecentActivityEntry {
+  cards: Array<ActivityCardType>
+  filterByName?: string;
+  filterByLocation?: string;
+}
 @Component({
   tag: 'recent-activity',
   styleUrl: 'recent-activity.scss',
@@ -14,10 +19,12 @@ let wroteReview = '';
 })
 export class RecentActivity {
 
+  @Prop() cards: Array<ActivityCardType>;
+  @Prop() filterByName?: string = '';
+  @Prop() filterByLocation?: string = '';
+
   @State() filter: filterType = 'all';
 
-  @State() searchPlaceName = '';
-  @State() searchLocation = '';
 
   setFilter(filterTo: filterType){
     this.filter = filterTo;
@@ -43,14 +50,16 @@ export class RecentActivity {
 
   filterCards(){
     let cardsFiltered = [];
+    const placeName = this.filterByName.toLocaleLowerCase();
+    const location = this.filterByLocation.toLowerCase();
 
     
     if(this.filter === 'all'){
-      cardsFiltered = cards.filter((post) => (
-        (this.searchPlaceName === '' && this.searchLocation === '') ? (post) : (post.location.toLocaleLowerCase().includes(this.searchLocation.toLocaleLowerCase()) && post.placeName.toLocaleLowerCase().includes(this.searchPlaceName.toLocaleLowerCase()))))
+      cardsFiltered = this.cards.filter((post) => (
+        (placeName === '' && location === '') ? (post) : (post.location.toLocaleLowerCase().includes(location) && post.placeName.toLocaleLowerCase().includes(placeName))))
     } else {
-      cardsFiltered = cards.filter((post) => (
-        (this.searchPlaceName === ''  && this.searchLocation === '') ? (post.activity === this.filter) : (post.location.toLocaleLowerCase().includes(this.searchLocation.toLocaleLowerCase()) && post.placeName.toLocaleLowerCase().includes(this.searchPlaceName.toLocaleLowerCase()) && post.activity === this.filter)))
+      cardsFiltered = this.cards.filter((post) => (
+        (placeName === ''  && location === '') ? (post.activity === this.filter) : (post.location.toLocaleLowerCase().includes(location) && post.placeName.toLocaleLowerCase().includes(placeName) && post.activity === this.filter)))
     }
     return cardsFiltered;
   }
@@ -80,18 +89,6 @@ export class RecentActivity {
         </div>
       )
   }
-
-
-  @Listen("searchPlaceEvent", {target: "body"})
-  searchPlaceHandler(event: CustomEvent<string>){
-    this.searchPlaceName = event.detail;
-  }
-
-  @Listen("searchLocationEvent", {target: "body"})
-  searchLocationHandler(event: CustomEvent<string>){
-    this.searchLocation = event.detail;
-  }
-  
 
   render() {
     return (

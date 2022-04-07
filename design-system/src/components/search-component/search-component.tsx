@@ -18,13 +18,14 @@ export interface ISearchEntry {
 export class SearchComponent {
 
   @Prop() searchBarEntry: ISearchEntry;
-
-
   @Event({}) searchPlaceEvent: EventEmitter<string>;
-  handleChangeNear(eventInput) {
+  @Event({}) searchLocationEvent: EventEmitter<string>;
+
+
+  handleChangeNear(eventInput?: any) {
     this.searchPlaceEvent.emit(eventInput.target.value);
   }
-  @Event({}) searchLocationEvent: EventEmitter<string>;
+  
   handleChangeLocation(eventInput) {
     this.searchLocationEvent.emit(eventInput.target.value);
   }

@@ -29,6 +29,9 @@ export namespace Components {
         "navbarEntry": INavbarEntry;
     }
     interface RecentActivity {
+        "cards": Array<ActivityCardType>;
+        "filterByLocation"?: string;
+        "filterByName"?: string;
     }
     interface SearchComponent {
         "searchBarEntry": ISearchEntry;
@@ -126,6 +129,9 @@ declare namespace LocalJSX {
         "navbarEntry"?: INavbarEntry;
     }
     interface RecentActivity {
+        "cards"?: Array<ActivityCardType>;
+        "filterByLocation"?: string;
+        "filterByName"?: string;
     }
     interface SearchComponent {
         "onSearchLocationEvent"?: (event: CustomEvent<string>) => void;

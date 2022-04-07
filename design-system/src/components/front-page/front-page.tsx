@@ -1,8 +1,10 @@
 import { Component, ComponentInterface, h, Host, Prop, State } from '@stencil/core';
 
 import Logo from '../../assets/Logo.svg';
+import { cards } from '../../global/data/activity-cards.data';
 import { ISearchEntry } from '../search-component/search-component';
 import {navBarPropsData} from './../../global/data/nav-bar-props.data'
+
 
 export interface IFrontPageEntry {
   links: Array<{
@@ -40,22 +42,35 @@ export class FrontPage implements ComponentInterface {
   @Prop() frontPageEntry: IFrontPageEntry;
   @State() isShowingMore: boolean;
 
+  @State() filterByName = '';
+  @State() filterByLocation = '';
+
   private searchBarEntry: ISearchEntry = {
     firstInputTitle: 'Find',
     firsInputType: 'text',
     firstInputPlaceHolder: 'burgers, barbers, spas, handyman',
     secondInputTitle: 'Near',
     secondInputType: 'text',
-    secondInputPlaceHolder: 'Vancouver, BC'
+    secondInputPlaceHolder: 'Vancouver, BC',
+  }
+
+  onSearchPlaceEvent(ev?: any){
+    this.filterByName = ev.detail;
+  }
+  onSearchLocationEvent(ev?: any){
+    this.filterByLocation = ev.detail;
   }
 
   logoAndSearchBarRender(){
-    
     return(
         <div class="home-page-inner-container">
             
             <img src={Logo} alt="" />
-            <search-component searchBarEntry={this.searchBarEntry}></search-component>
+              <search-component 
+                onSearchPlaceEvent={(ev) => this.onSearchPlaceEvent(ev)}
+                onSearchLocationEvent={(ev) => this.onSearchLocationEvent(ev)}
+                searchBarEntry={this.searchBarEntry}>
+              </search-component>
 
             {this.linksRender()}
             
@@ -107,7 +122,7 @@ export class FrontPage implements ComponentInterface {
   recentActivityCardsRender(){
     return(
       <div>
-          <recent-activity></recent-activity>
+          <recent-activity cards={cards} filterByName={this.filterByName} filterByLocation={this.filterByLocation}></recent-activity>
       </div>
     )
   }
