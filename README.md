@@ -3,7 +3,7 @@
 - [Getting started](#getting-started)
 
 ---
-Tim Buzmakov
+
 
 ## Getting started
 
